@@ -1,0 +1,249 @@
+:root {
+  --black-22: #000000;
+  --blue-violet-22: #705abd4d;
+  --blue-violet-3: #705abd73;
+  --blue-violet-4: #705abd26;
+  --blue-violet2: #705abd;
+  --cape-cod: #334047;
+  --dove-gray: #707070;
+  --gallery: #f0f0f0;
+  --geyser: #d3d6e2;
+  --golden-tainoi: #fdd05a;
+  --lochmara: #007bc3;
+  --mountain-mist: #969492;
+  --pomegranate: #fc4420;
+  --science-blue: #006dbc;
+  --tuna: #333f48;
+  --white: #ffffff;
+
+  --font-size-l2: 18px;
+  --font-size-m2: 15px;
+  --font-size-m22: 16px;
+  --font-size-s: 14px;
+  --font-size-xs: 12px;
+  --font-size-xxl2: 24px;
+  --font-size-xxxl2: 36px;
+
+  --font-family-helveticaneue-bold: "HelveticaNeue-Bold", Helvetica;
+  --font-family-open_sans: "Open Sans", Helvetica;
+  --font-family-segoeui-regular: "SegoeUI-Regular", Helvetica;
+}
+
+/*Marlon START*/
+.omaps-nav{
+  background-color: var(--science-blue);
+  color: white;
+  padding: 0 1em;
+  position: sticky;
+}
+
+.omaps-nav-row{
+  padding: 0.75em 0;
+}
+
+.title{
+  letter-spacing: 0;
+  line-height: 36px;
+  min-height: 51px;
+  min-width: 325px;
+  white-space: nowrap;
+}
+
+.omaps-nav-menu{
+  text-align: right;
+}
+
+.omaps-nav-menu h2{
+  display: inline-block;
+  margin: 0 1em;
+}
+
+.ifa-logo{
+    background-image: url(img/ifalogo.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 60px;
+    width: 63px;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.ifa-logo-container{
+  display: flex;
+  align-items: center;
+}
+
+.header-cluster-container{
+  padding-top: 2em;
+  background-color: var(--gallery);
+}
+
+.header-cluster-container__white{
+  background-color: transparent;
+}
+
+.omaps-routes-container{
+  margin: 0 4em 0 4em;
+}
+
+.cluster-name{
+  font-size: 18px;
+  color: var(--blue-violet2);
+  font-weight: 700;
+  border-bottom: 3px solid var(--blue-violet2);
+  padding-bottom: 10px;
+}
+
+.occupations-columns{
+  display: flex;
+  margin-top: 1em;
+}
+
+.occupations-columns > div{
+  flex-grow: 1;
+	width: 33%;
+}
+
+.omaps-occupations{
+  display: flex;
+}
+
+.occupations-heading{
+  padding: 0.5em 0 0.5em 0.75em;
+  font-weight: 600;
+  color: var(--tuna);
+  margin-bottom: 0.5em;
+}
+
+.technical-occupations-heading{
+  background-color: var(--blue-violet-22);
+}
+
+.higher-technical-occupations-heading{
+  background-color: var(--blue-violet-3);
+}
+
+.professional-occupations-heading{
+  background-color: var(--blue-violet-4);
+}
+
+.professional-occupations .occupations-text-container{
+  margin-right: 0;
+}
+
+.professional-occupations{
+  width: 29% !important;
+}
+
+.occupations-text{
+    color: var(--dove-gray);
+    font-size: 13px;
+    font-weight: 400;
+    border: 1px solid var(--dove-gray);
+    padding: 1em;
+    min-height: 8em;
+}
+
+.omaps-chevron{
+  background-image: url("img/chevron.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: transparent;
+  margin-right: 0.5em;
+}
+
+.omaps-chevron--hidden{
+  background-image: none;
+}
+
+.occupations-text-container{
+  margin-right: 1em;
+}
+
+.route-heading{
+  -webkit-text-stroke: 0.5px var(--dove-gray);
+  color: var(--tuna);
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.route-container{
+  margin: 2em 0;
+}
+
+.pathway-container{
+  margin-top: 1.5em;
+}
+
+.pathway-heading{
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 300;
+  background-color: #705abd;
+  padding: 0.5em 0 0.5em 0.5em;
+  border-top-right-radius: 25px;
+}
+/*Marlon END*/
+
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600");
+
+@font-face {
+  font-family: "SegoeUI-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.animaapp.com/SegoeUI-Regular") format("truetype");
+}
+
+@font-face {
+  font-family: "HelveticaNeue-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://fonts.animaapp.com/HelveticaNeue-Bold") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: var(--font-family-open_sans);
+}
+
+h1{
+  font-size: 36px;
+}
+
+h2{
+  font-size: 18px;
+}
+
+h3{
+  font-size: 16px;
+}
+
+p{
+  line-height: 15px;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+.container-center-horizontal {
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.container-center-horizontal > * {
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.screen a {
+  text-decoration: none;
+  display: contents;
+}
