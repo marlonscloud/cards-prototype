@@ -22,7 +22,7 @@ function CardClose() {
     smallCard.removeEventListener("click", CardOpen);
     setTimeout(function () {
         smallCard.addEventListener("click", window.boundCardOpenFn = CardOpen.bind(smallCard));
-    }.bind(smallCard), 550);
+    }.bind(smallCard), 100);
 }
 
 /*Utilities START*/

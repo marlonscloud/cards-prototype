@@ -113,6 +113,11 @@
   font-weight: 600;
   color: var(--tuna);
   margin-bottom: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  min-height: 3em;
 }
 
 .technical-occupations-heading{
@@ -131,8 +136,8 @@
   margin-right: 0;
 }
 
-.professional-occupations{
-  width: 29% !important;
+div.professional-occupations{
+  width: 29%;
 }
 
 .occupations-text{
