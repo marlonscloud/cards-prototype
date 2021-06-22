@@ -74,7 +74,7 @@
 }
 
 .header-cluster-container{
-  padding-top: 2em;
+  padding: 1em;
   background-color: var(--gallery);
 }
 
@@ -139,15 +139,19 @@
     color: var(--dove-gray);
     font-size: 13px;
     font-weight: 400;
-    border: 1px solid var(--dove-gray);
     padding: 1em;
     min-height: 8em;
+}
+
+.occupations-text__with-border{
+  border: 1px solid var(--dove-gray);
 }
 
 .omaps-chevron{
   background-image: url("img/chevron.png");
   background-size: contain;
-  background-position: center center;
+  /* background-position: center center; */
+  background-position-y: 2.25em;
   background-repeat: no-repeat;
   color: transparent;
   margin-right: 0.5em;
@@ -183,6 +187,34 @@
   background-color: #705abd;
   padding: 0.5em 0 0.5em 0.5em;
   border-top-right-radius: 25px;
+}
+
+.small-card{
+  background-color: white;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 1em 0;
+  min-height: 4.5em;
+  box-shadow: 0 4px 6px -6px black;
+}
+
+.small-card:hover{
+  cursor: pointer;
+  background: #ffdd00 !important;
+}
+
+.card-title{
+  padding: 1em;
+}
+
+.large-card{
+  height: 10em;
+  width: 100%;
+}
+
+.large-card:hover{
+  cursor: default;
+  background: white !important;
 }
 /*Marlon END*/
 
