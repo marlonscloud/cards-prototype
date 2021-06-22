@@ -196,6 +196,7 @@
   margin: 1em 0;
   min-height: 4.5em;
   box-shadow: 0 4px 6px -6px black;
+  position: relative;
 }
 
 .small-card:hover{
@@ -215,6 +216,24 @@
 .large-card:hover{
   cursor: default;
   background: white !important;
+}
+
+.small-card .close-icon{
+  display: none;
+}
+
+.large-card .close-icon{
+  display: inline-block;
+}
+
+.close-icon{
+  position: absolute;
+  right: 11px;
+  top: 11px;
+}
+
+.close-icon:hover{
+  cursor: pointer;
 }
 /*Marlon END*/
 
