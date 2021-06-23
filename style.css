@@ -101,11 +101,27 @@
 
 .occupations-columns > div{
   flex-grow: 1;
-	width: 33%;
+	width: 45%;
+}
+
+div.professional-occupations{
+  width: 37%;
+}
+
+.omaps-occupations--empty-column__hidden{
+  display: none !important;
 }
 
 .omaps-occupations{
   display: flex;
+}
+
+.omaps-occupations__wide{
+  width: 75%;
+}
+
+.omaps-occupations__narrow{
+  width: 45%;
 }
 
 .occupations-heading{
@@ -136,16 +152,16 @@
   margin-right: 0;
 }
 
-div.professional-occupations{
-  width: 29%;
-}
-
 .occupations-text{
     color: var(--dove-gray);
     font-size: 13px;
     font-weight: 400;
     padding: 1em;
     /* min-height: 8em; */
+}
+
+p.occupations-text__padding-right{
+  padding-right: 5em;
 }
 
 .occupations-text__with-border{
@@ -178,7 +194,8 @@ div.professional-occupations{
 }
 
 .route-container{
-  margin: 2em 0;
+  /*64em bottom for debugging, set to 2em when done*/
+  margin: 2em 0 64em 0;
 }
 
 .pathway-container{
