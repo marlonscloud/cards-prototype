@@ -145,7 +145,7 @@ div.professional-occupations{
     font-size: 13px;
     font-weight: 400;
     padding: 1em;
-    min-height: 8em;
+    /* min-height: 8em; */
 }
 
 .occupations-text__with-border{
