@@ -230,8 +230,12 @@ p.occupations-text__padding-right{
   padding: 1em;
 }
 
+.large-card > .card-title{
+  font-size: 19px;
+  font-weight: 600;
+}
+
 .large-card{
-  height: 10em;
   width: 100%;
   border: 1px solid #424242;
   border-radius: 16px;
@@ -269,8 +273,34 @@ p.occupations-text__padding-right{
   margin-left: 0.75em;
 }
 
+.heart-icon:hover{
+  cursor: pointer;
+}
+
 .close-icon:hover{
   cursor: pointer;
+}
+
+.hidden-card-content{
+  padding: 0.5em 1em 0 1.25em;
+}
+
+.hidden-card-content > p{
+  padding-bottom: 1em;
+}
+
+.small-card > .hidden-card-content{
+  display: none;
+}
+
+.large-card > .hidden-card-content{
+  display: block;
+}
+
+.hidden-card-content > h2{
+  font-size: 16px;
+  margin-bottom: 1em;
+  font-weight: 600;
 }
 /*Marlon END*/
 
