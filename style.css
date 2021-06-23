@@ -118,10 +118,12 @@ div.professional-occupations{
 
 div.omaps-occupations__wide{
   width: 75%;
+  transition: width 0.5s;
 }
 
 .omaps-occupations__narrow{
   width: 45%;
+  transition: width 0.3s;
 }
 
 .occupations-heading{
@@ -166,6 +168,7 @@ p.occupations-text__padding-right{
 
 .occupations-text__with-border{
   border: 1px solid var(--dove-gray);
+  min-height: 8em;
 }
 
 .omaps-chevron{
@@ -176,6 +179,10 @@ p.occupations-text__padding-right{
   background-repeat: no-repeat;
   color: transparent;
   margin-right: 0.5em;
+}
+
+.omaps-chevron__top{
+  background-position-y: 2em;
 }
 
 .omaps-chevron--hidden{
@@ -270,11 +277,19 @@ p.occupations-text__padding-right{
 
 .heart-icon{
   position: absolute;
-  margin-left: 0.75em;
+  top: 8px;
 }
 
 .heart-icon:hover{
   cursor: pointer;
+}
+
+.heart-icon:hover .heart-icon--path{
+  fill: var(--science-blue);
+}
+
+.heart-icon__clicked{
+  fill: var(--science-blue);
 }
 
 .close-icon:hover{
@@ -287,6 +302,7 @@ p.occupations-text__padding-right{
 
 .hidden-card-content > p{
   padding-bottom: 1em;
+  line-height: 18px;
 }
 
 .small-card > .hidden-card-content{
@@ -301,6 +317,60 @@ p.occupations-text__padding-right{
   font-size: 16px;
   margin-bottom: 1em;
   font-weight: 600;
+}
+
+.read-more--button{
+    display: block;
+    border: 2px solid #28A745;
+    border-radius: 5px;
+    width: 7em;
+    color: #28A745;
+    padding: 0.5em;
+    position: relative;
+    margin-bottom: 1em;
+}
+
+.read-more--button:hover{
+  color: white;
+  background-color: green;
+}
+
+.read-more--button > p{
+  text-align: center;
+}
+
+.blue-pill-container{
+  display: flex;
+  margin-bottom: 2em;
+}
+
+.technical-education-role--container{
+  padding-top: 3px;
+}
+
+.degree-type{
+  color: #645C5C;
+  font-size: 15px;
+  margin-top: 1em;
+  padding: 3px 1em 0 1.75em;
+}
+
+.technical-education-role{
+  padding: 0 1em 0 1.75em;
+  color: var(--science-blue);
+}
+
+.technical-education-status{
+  padding: 3px 0 0 0;
+}
+
+.blue-pill{
+  background: #007BC3;
+  border-radius: 10px;
+  color: white;
+  width: 30px;
+  height: 21px;
+  padding: 3px 0 4.5px 9.5px;
 }
 /*Marlon END*/
 

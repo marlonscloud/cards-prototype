@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     CardListeners();
+    HeartIconListeners();
     window.cardListeners = [];
 });
 
@@ -7,6 +8,17 @@ function CardListeners() {
     /*When the page loads, get all cards and add the card open event listener to each one*/
     let cards = document.getElementsByClassName("small-card");
     addEventListenerList(cards, 'click', CardOpen);
+}
+
+function HeartIconListeners() {
+    let hearts = document.getElementsByClassName("heart-icon");
+
+    for (var i = 0; i < hearts.length; i++) {
+        hearts[i].addEventListener('click', function (e) {
+            e = e || window.event;
+            HeartIconClickHandler(e);
+        }, false);
+    }
 }
 
 function CardOpen() {
@@ -99,6 +111,11 @@ function HandleClicks(occupationsColumn) {
     if (!occupationsColumn.classList.contains("omaps-occupations--empty-column__hidden")) {
         occupationsColumn.classList.toggle("omaps-occupations--empty-column__hidden");
     }
+}
+
+function HeartIconClickHandler(e) {
+    // var testy = e.currentTarget.querySelector(".heart-icon--path");
+    e.currentTarget.querySelector(".heart-icon--path").classList.toggle("heart-icon__clicked");
 }
 
 /*Utilities START*/
