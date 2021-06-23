@@ -233,6 +233,8 @@ p.occupations-text__padding-right{
 .large-card{
   height: 10em;
   width: 100%;
+  border: 1px solid #424242;
+  border-radius: 16px;
 }
 
 .large-card:hover{
@@ -252,6 +254,19 @@ p.occupations-text__padding-right{
   position: absolute;
   right: 11px;
   top: 11px;
+}
+
+.small-card .heart-icon{
+  display: none;
+}
+
+.large-card .heart-icon{
+  display: inline-block;
+}
+
+.heart-icon{
+  position: absolute;
+  margin-left: 0.75em;
 }
 
 .close-icon:hover{
