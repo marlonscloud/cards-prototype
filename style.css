@@ -116,7 +116,7 @@ div.professional-occupations{
   display: flex;
 }
 
-.omaps-occupations__wide{
+div.omaps-occupations__wide{
   width: 75%;
 }
 
@@ -161,7 +161,7 @@ div.professional-occupations{
 }
 
 p.occupations-text__padding-right{
-  padding-right: 5em;
+  padding-right: 15em;
 }
 
 .occupations-text__with-border{

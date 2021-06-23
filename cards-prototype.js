@@ -20,11 +20,7 @@ function CardOpen() {
     /*Set omaps-occupations column (flex column) to expand*/
     this.parentElement.parentElement.classList.toggle("omaps-occupations__wide");
     /*Set padding on the occupations-text paragraph so that it doesn't take up the new larger width of the column*/
-    var paragraphsToResize = this.closest(".occupations-columns").querySelectorAll(".occupations-text-paragraph");
-    for (i = 0; i < paragraphsToResize.length; i++) {
-        paragraphsToResize[i].classList.add("occupations-text__padding-right");
-    }
-    // this.previousSibling.previousSibling.firstElementChild.classList.toggle("occupations-text__padding-right");
+    this.previousSibling.previousSibling.firstElementChild.classList.toggle("occupations-text__padding-right");
     this.classList.toggle("large-card");
 
     /*Remove listeners to open card (since it's now open)*/
@@ -33,7 +29,6 @@ function CardOpen() {
     this.removeEventListener("click", window.cardListeners[0]);
 
     /*Add event listener to svg (close icon) for closing card*/
-    console.log("adding listern to", this.firstElementChild);
     this.firstElementChild.addEventListener("click", CardClose);
 }
 
@@ -45,6 +40,11 @@ function CardClose() {
     var openCardsParagraph = document.querySelectorAll(".occupations-text__padding-right");
     for (i = 0; i < openCardsParagraph.length; i++) {
         openCardsParagraph[i].classList.remove("occupations-text__padding-right");
+    }
+
+    var wideColumns = document.querySelectorAll(".omaps-occupations__wide");
+    for (i = 0; i < wideColumns.length; i++) {
+        wideColumns[i].classList.remove("omaps-occupations__wide");
     }
 
     /*show the last empty column*/
@@ -80,6 +80,7 @@ function HandleClicks(occupationsColumn) {
     /*When any card is opened, all other cards should close (only one open at a time)*/
     var openCards = document.querySelectorAll(".large-card");
     var openCardsParagraph = document.querySelectorAll(".occupations-text__padding-right");
+    var wideColumns = document.querySelectorAll(".omaps-occupations__wide");
 
     for (i = 0; i < openCards.length; i++) {
         openCards[i].classList.remove("large-card");
@@ -87,6 +88,10 @@ function HandleClicks(occupationsColumn) {
 
     for (i = 0; i < openCardsParagraph.length; i++) {
         openCardsParagraph[i].classList.remove("occupations-text__padding-right");
+    }
+
+    for (i = 0; i < wideColumns.length; i++) {
+        wideColumns[i].classList.remove("omaps-occupations__wide");
     }
 
     /*Hide the last empty column if it's not already hidden*/
