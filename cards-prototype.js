@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     CardListeners();
+    window.cardListeners = [];
 });
 
 function CardListeners() {
@@ -27,6 +28,10 @@ function CardOpen() {
         occupationsColumn.classList.toggle("omaps-occupations--empty-column__hidden");
     }
 
+    /*Add listeners back into any other cards that were closed above*/
+    let cards = document.getElementsByClassName("small-card");
+    addEventListenerList(cards, 'click', CardOpen);
+
     /*Set omaps-occupations column (flex column) to expand*/
     this.parentElement.parentElement.classList.toggle("omaps-occupations__wide");
     /*Set padding on the occupations-text paragraph so that it doesn't take up the new larger width of the column*/
@@ -35,9 +40,11 @@ function CardOpen() {
 
     /*Remove listeners to open card (since it's now open)*/
     this.removeEventListener("click", CardOpen);
-    this.removeEventListener("click", window.boundCardOpenFn);
+    this.removeEventListener("click", CardOpen);
+    this.removeEventListener("click", window.cardListeners[0]);
 
     /*Add event listener to svg (close icon) for closing card*/
+    console.log("adding listern to", this.firstElementChild);
     this.firstElementChild.addEventListener("click", CardClose);
 }
 
@@ -57,8 +64,22 @@ function CardClose() {
     /*Remove any leftover open listener on card and set-up a new one so we can bind 'this'
     - we also need to store the new bound instance of this listener function so we can later remove it on open*/
     smallCard.removeEventListener("click", CardOpen);
+    smallCard.removeEventListener("click", CardOpen);
+
+    for (var l = 0; l < window.cardListeners.length; l++) {
+        smallCard.removeEventListener("click", window.cardListeners[l]);
+    }
+
+    window.cardListeners.splice(0);
+
+    //Remove leftover event listeners
+    var new_card = smallCard.cloneNode(true);
+    smallCard.parentNode.replaceChild(new_card, smallCard);
+
     setTimeout(function () {
-        smallCard.addEventListener("click", window.boundCardOpenFn = CardOpen.bind(smallCard));
+        var temp;
+        smallCard.addEventListener("click", temp = CardOpen.bind(smallCard));
+        window.cardListeners.push(temp);
     }.bind(smallCard), 100);
 }
 
