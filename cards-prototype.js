@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     CardListeners();
     HeartIconListeners();
+    FlyoutListeners();
     window.cardListeners = [];
 });
 
@@ -118,6 +119,20 @@ function HandleClicks(occupationsColumn) {
 function HeartIconClickHandler(e) {
     // var testy = e.currentTarget.querySelector(".heart-icon--path");
     e.currentTarget.querySelector(".heart-icon--path").classList.toggle("heart-icon__clicked");
+}
+
+function FlyoutListeners() {
+    var closeButton = document.getElementById("flyout-close-button");
+    var settingsButton = document.getElementById("settings-button");
+
+    closeButton.addEventListener('click', function () {
+        document.getElementById("settings-flyout").classList.toggle("settings-flyout__not-visible");
+    });
+
+    settingsButton.addEventListener('click', function () {
+        document.getElementById("settings-flyout").classList.toggle("settings-flyout__not-visible");
+    });
+
 }
 
 /*Utilities START*/
