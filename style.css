@@ -40,6 +40,7 @@
   position: sticky;
   top: 0;
   background-color: var(--science-blue);
+  z-index: 10;
 }
 
 .omaps-nav{
@@ -239,6 +240,7 @@ p.occupations-text__padding-right{
   min-height: 4.5em;
   box-shadow: 0 4px 6px -6px black;
   position: relative;
+  max-width: 240px;
 }
 
 .small-card:hover{
@@ -263,6 +265,10 @@ p.occupations-text__padding-right{
   width: 100%;
   border: 1px solid #424242;
   border-radius: 16px;
+}
+
+.small-card.large-card{
+  max-width: 100%;
 }
 
 .large-card:hover{
@@ -361,12 +367,14 @@ p.occupations-text__padding-right{
   margin-bottom: 2em;
 }
 
-.blue-pill__small-card-container{
+.pill__small-card-container{
   float: right;
   padding-right: 1em;
+  display: flex;
+  gap: 10px;
 }
 
-.large-card > .blue-pill__small-card-container{
+.large-card > .pill__small-card-container{
   display: none;
 }
 
@@ -396,8 +404,30 @@ p.occupations-text__padding-right{
   color: white;
   width: 30px;
   height: 21px;
-  padding: 3px 0 4.5px 9.5px;
+  font-size: 12px;
+  padding: 4px 0 4.5px 10.5px;
 }
+
+.red-pill{
+  background: #FC4420;
+  border-radius: 10px;
+  color: white;
+  width: 30px;
+  height: 21px;
+  font-size: 12px;
+  padding: 4px 0 4.5px 8px;
+}
+
+.yellow-pill{
+  background: #FDD05A;
+  border-radius: 10px;
+  color: black;
+  width: 30px;
+  height: 21px;
+  font-size: 12px;
+  padding: 4px 0 4.5px 8px;
+}
+
 /*Marlon END*/
 
 

@@ -32,7 +32,9 @@ function CardOpen() {
     /*Set omaps-occupations column (flex column) to expand*/
     this.parentElement.parentElement.classList.toggle("omaps-occupations__wide");
     /*Set padding on the occupations-text paragraph so that it doesn't take up the new larger width of the column*/
-    this.previousSibling.previousSibling.firstElementChild.classList.toggle("occupations-text__padding-right");
+    var occupationsContainer = this.closest(".occupations-text-container");
+    var occupationsText = occupationsContainer.getElementsByClassName("occupations-text")[0];
+    occupationsText.firstElementChild.classList.toggle("occupations-text__padding-right");
     this.classList.toggle("large-card");
 
     /*Remove listeners to open card (since it's now open)*/
@@ -124,4 +126,21 @@ function addEventListenerList(list, event, fn) {
         list[i].addEventListener(event, fn, false);
     }
 }
+
+function getNextSibling(elem, selector) {
+
+    // Get the next sibling element
+    var sibling = elem.nextElementSibling;
+
+    // If there's no selector, return the first sibling
+    if (!selector) return sibling;
+
+    // If the sibling matches our selector, use it
+    // If not, jump to the next sibling and continue the loop
+    while (sibling) {
+        if (sibling.matches(selector)) return sibling;
+        sibling = sibling.nextElementSibling
+    }
+
+};
 /*Utilities END*/
