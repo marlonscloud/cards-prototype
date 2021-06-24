@@ -29,12 +29,26 @@
   --font-family-segoeui-regular: "SegoeUI-Regular", Helvetica;
 }
 
+/* TODO: use below for heart */
+/* <linkhref="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"> */
+/* <spanclass="material-icons">favorite</span>
+
 /*Marlon START*/
+
+.omaps-nav-container{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: var(--science-blue);
+}
+
 .omaps-nav{
   background-color: var(--science-blue);
   color: white;
   padding: 0 1em;
   position: sticky;
+  width: 1140px;
+  margin: 0 auto;
 }
 
 .omaps-nav-row{
@@ -83,7 +97,8 @@
 }
 
 .omaps-routes-container{
-  margin: 0 4em 0 4em;
+  width: 1140px;
+  margin: 0 auto;
 }
 
 .cluster-name{
@@ -118,12 +133,10 @@ div.professional-occupations{
 
 div.omaps-occupations__wide{
   width: 75%;
-  transition: width 0.5s;
 }
 
 .omaps-occupations__narrow{
   width: 45%;
-  transition: width 0.3s;
 }
 
 .occupations-heading{
@@ -237,6 +250,10 @@ p.occupations-text__padding-right{
   padding: 1em;
 }
 
+.small-card > .card-title{
+  padding: 1em 1em 0.5em 1em;
+}
+
 .large-card > .card-title{
   font-size: 19px;
   font-weight: 600;
@@ -342,6 +359,15 @@ p.occupations-text__padding-right{
 .blue-pill-container{
   display: flex;
   margin-bottom: 2em;
+}
+
+.blue-pill__small-card-container{
+  float: right;
+  padding-right: 1em;
+}
+
+.large-card > .blue-pill__small-card-container{
+  display: none;
 }
 
 .technical-education-role--container{

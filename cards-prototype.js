@@ -83,9 +83,9 @@ function CardClose() {
 
     setTimeout(function () {
         var temp;
-        smallCard.addEventListener("click", temp = CardOpen.bind(smallCard));
+        new_card.addEventListener("click", temp = CardOpen.bind(new_card));
         window.cardListeners.push(temp);
-    }.bind(smallCard), 100);
+    }.bind(new_card), 100);
 }
 
 function HandleClicks(occupationsColumn) {
