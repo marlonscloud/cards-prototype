@@ -88,6 +88,34 @@
   align-items: center;
 }
 
+.omaps-header-container{
+  display: flex;
+}
+
+.map-labels-container{
+  padding-left: 1em;
+}
+
+.map-labels-heading{
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 1em;
+}
+
+.map-labels-pills-container{
+  margin-top: 1em;
+}
+
+.map-labels-pills-row{
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.map-labels-pills-row > p{
+  margin-left: 2em;
+  padding-top: 3px;
+}
+
 .header-cluster-container{
   padding: 1em;
   background-color: var(--gallery);
@@ -95,6 +123,7 @@
 
 .header-cluster-container__white{
   background-color: transparent;
+  width: 849px;
 }
 
 .omaps-routes-container{
@@ -254,6 +283,7 @@ p.occupations-text__padding-right{
 
 .small-card > .card-title{
   padding: 1em 1em 0.5em 1em;
+  line-height: 1em;
 }
 
 .large-card > .card-title{
@@ -300,7 +330,11 @@ p.occupations-text__padding-right{
 
 .heart-icon{
   position: absolute;
-  top: 8px;
+  top: 11px;
+}
+
+.heart-icon__line-break{
+  top: 30.5px;
 }
 
 .heart-icon:hover{
@@ -374,6 +408,11 @@ p.occupations-text__padding-right{
   gap: 10px;
 }
 
+.pill__small-card-container__line-break{
+  position: relative;
+  bottom: 10px;
+}
+
 .large-card > .pill__small-card-container{
   display: none;
 }
@@ -426,6 +465,20 @@ p.occupations-text__padding-right{
   height: 21px;
   font-size: 12px;
   padding: 4px 0 4.5px 8px;
+}
+
+.green-pill{
+  background: #3C6425;
+  border-radius: 10px;
+  color: white;
+  width: 42px;
+  height: 21px;
+  font-size: 12px;
+  padding: 4px 0 4.5px 8px;
+}
+
+p.green-pill-text{
+  margin-left: 20px;
 }
 
 /*Marlon END*/
