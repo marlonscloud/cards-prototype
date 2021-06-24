@@ -42,7 +42,14 @@
     </div>
 
     <div class="omaps-routes-container">
-        <div class="omaps-header-container">
+        <div id="filters-text-notification">
+            <p>You are viewing the occupational map(s) with <a class="filters-text-link">descriptions</a> and <a
+                    class="filters-text-link">map keys</a>.
+                There are no active
+                <a class="filters-text-link">filters</a>.
+            </p>
+        </div>
+        <div id="omaps-header-container" class="omaps-header-container">
             <section class="header-cluster-container header-cluster-container__white">
                 <div class="cluster-name">
                     <h2>Cluster name</h2>
@@ -70,7 +77,7 @@
                     <div class="omaps-occupations">
                         <div class="occupations-text-container">
                             <div class="occupations-heading technical-occupations-heading">
-                                <h3>Technical Occupations</h3>
+                                <h3>Higher Technical Occupations</h3>
                             </div>
                             <div class="occupations-text occupations-text__with-border">
                                 <p>
@@ -130,7 +137,7 @@
             </div>
         </div>
 
-        <section id="settings-flyout" class="settings-flyout ">
+        <section id="settings-flyout" class="settings-flyout settings-flyout__not-visible">
             <div class="flyout-container">
                 <a id="flyout-close-button">Close ></a>
 
@@ -145,7 +152,7 @@
 
                 <div class="settings-toggle-container">
                     <h2>Descriptions</h2>
-                    <label class="switch"><input type="checkbox" />
+                    <label class="switch"><input name="descriptions-toggle" type="checkbox" />
                         <div></div>
                     </label>
                 </div>

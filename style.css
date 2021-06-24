@@ -35,6 +35,10 @@
 
 /*Marlon START*/
 
+.hide{
+  display: none !important;
+}
+
 .omaps-nav-container{
   width: 100%;
   position: sticky;
@@ -129,6 +133,14 @@
 .omaps-routes-container{
   width: 1140px;
   margin: 0 auto;
+}
+
+#filters-text-notification{
+  margin-top: 3em;
+}
+
+.filters-text-link{
+  color: #007bc3;
 }
 
 .settings-flyout{
@@ -269,6 +281,7 @@ div.omaps-occupations__wide{
   align-content: center;
   flex-direction: column;
   min-height: 3em;
+  min-width: 240px;
 }
 
 .technical-occupations-heading{
@@ -360,6 +373,7 @@ p.occupations-text__padding-right{
   box-shadow: 0 4px 6px -6px black;
   position: relative;
   max-width: 240px;
+  min-width: 240px;
 }
 
 .small-card:hover{
@@ -608,7 +622,8 @@ h2{
 }
 
 h3{
-  font-size: 16px;
+  font-size: 15px;
+  line-height: 1.25em;
 }
 
 p{

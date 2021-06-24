@@ -124,6 +124,13 @@ function HeartIconClickHandler(e) {
 function FlyoutListeners() {
     var closeButton = document.getElementById("flyout-close-button");
     var settingsButton = document.getElementById("settings-button");
+    var settingsTextLinks = document.getElementsByClassName("filters-text-link");
+
+    for (var i = 0; i < settingsTextLinks.length; i++) {
+        settingsTextLinks[i].addEventListener('click', function () {
+            document.getElementById("settings-flyout").classList.toggle("settings-flyout__not-visible");
+        }, false);
+    }
 
     closeButton.addEventListener('click', function () {
         document.getElementById("settings-flyout").classList.toggle("settings-flyout__not-visible");
@@ -133,6 +140,42 @@ function FlyoutListeners() {
         document.getElementById("settings-flyout").classList.toggle("settings-flyout__not-visible");
     });
 
+    var descrptionsCheckbox = document.querySelector("input[name=descriptions-toggle]");
+
+    /*Check whether they should show or not on load*/
+    toggleDescriptions(descrptionsCheckbox.checked);
+
+    descrptionsCheckbox.addEventListener('change', function () {
+        toggleDescriptions(descrptionsCheckbox.checked);
+    });
+
+}
+
+function toggleDescriptions(checked) {
+    var columnHeadings = document.getElementsByClassName("occupations-heading");
+    var occupationsText = document.getElementsByClassName("occupations-text");
+    var headerContainer = document.getElementById("omaps-header-container");
+    var filtersTextNotification = document.getElementById("filters-text-notification");
+
+    if (checked) {
+        for (var i = 0; i < columnHeadings.length; i++) {
+            columnHeadings[i].classList.remove("hide");
+        }
+        for (var i = 0; i < occupationsText.length; i++) {
+            occupationsText[i].classList.remove("hide");
+        }
+        headerContainer.classList.remove("hide");
+        filtersTextNotification.classList.add("hide");
+    } else {
+        for (var i = 0; i < columnHeadings.length; i++) {
+            columnHeadings[i].classList.add("hide");
+        }
+        for (var i = 0; i < occupationsText.length; i++) {
+            occupationsText[i].classList.add("hide");
+        }
+        headerContainer.classList.add("hide");
+        filtersTextNotification.classList.remove("hide");
+    }
 }
 
 /*Utilities START*/
