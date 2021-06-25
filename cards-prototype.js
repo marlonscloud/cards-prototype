@@ -122,6 +122,10 @@ function HeartIconClickHandler(e) {
 }
 
 function FlyoutListeners() {
+    /*Set pathways to show by default*/
+    var pathwaysCheckbox = document.querySelector("input[name=pathways-toggle]");
+    pathwaysCheckbox.checked = true;
+
     var closeButton = document.getElementById("flyout-close-button");
     var settingsButton = document.getElementById("settings-button");
     var settingsTextLinks = document.getElementsByClassName("filters-text-link");
@@ -149,13 +153,20 @@ function FlyoutListeners() {
         toggleDescriptions(descrptionsCheckbox.checked);
     });
 
+    togglePathways(pathwaysCheckbox.checked);
+
+    pathwaysCheckbox.addEventListener('change', function () {
+        togglePathways(pathwaysCheckbox.checked);
+    });
 }
 
 function toggleDescriptions(checked) {
     var columnHeadings = document.getElementsByClassName("occupations-heading");
     var occupationsText = document.getElementsByClassName("occupations-text");
     var headerContainer = document.getElementById("omaps-header-container");
-    var filtersTextNotification = document.getElementById("filters-text-notification");
+
+    var pathwaysCheckbox = document.querySelector("input[name=pathways-toggle]");
+    handleIntroText(checked, pathwaysCheckbox.checked);
 
     if (checked) {
         for (var i = 0; i < columnHeadings.length; i++) {
@@ -165,7 +176,6 @@ function toggleDescriptions(checked) {
             occupationsText[i].classList.remove("hide");
         }
         headerContainer.classList.remove("hide");
-        filtersTextNotification.classList.add("hide");
     } else {
         for (var i = 0; i < columnHeadings.length; i++) {
             columnHeadings[i].classList.add("hide");
@@ -174,7 +184,75 @@ function toggleDescriptions(checked) {
             occupationsText[i].classList.add("hide");
         }
         headerContainer.classList.add("hide");
-        filtersTextNotification.classList.remove("hide");
+    }
+}
+
+function togglePathways(checked) {
+    var pathwayHeadings = document.getElementsByClassName("pathway-heading");
+    var clusterHeadings = document.getElementsByClassName("cluster-name");
+    var headerClusterContainers = document.getElementsByClassName("header-cluster-container");
+
+    var descrptionsCheckbox = document.querySelector("input[name=descriptions-toggle]");
+    handleIntroText(descrptionsCheckbox.checked, checked);
+
+    if (checked) {
+        for (var i = 0; i < pathwayHeadings.length; i++) {
+            pathwayHeadings[i].classList.remove("hide");
+        }
+        for (var i = 0; i < clusterHeadings.length; i++) {
+            clusterHeadings[i].firstElementChild.classList.remove("hide");
+            clusterHeadings[i].classList.remove("cluster-name--hidden");
+        }
+        for (var i = 0; i < headerClusterContainers.length; i++) {
+            headerClusterContainers[i].classList.remove("header-cluster-container--pathways-hidden");
+        }
+    } else {
+        for (var i = 0; i < pathwayHeadings.length; i++) {
+            pathwayHeadings[i].classList.add("hide");
+        }
+        for (var i = 0; i < clusterHeadings.length; i++) {
+            clusterHeadings[i].firstElementChild.classList.add("hide");
+            clusterHeadings[i].classList.add("cluster-name--hidden");
+        }
+        for (var i = 0; i < headerClusterContainers.length; i++) {
+            headerClusterContainers[i].classList.add("header-cluster-container--pathways-hidden");
+        }
+    }
+}
+
+function handleIntroText(descriptionsChecked, pathwaysChecked) {
+    var introNoDescriptions = document.getElementById("intro-no-descriptions");
+    var introWithDescriptions = document.getElementById("intro-with-descriptions");
+    var introWithDescriptionsAndPathways = document.getElementById("intro-with-descriptions-and-pathways");
+    var introWithoutDescriptionsWithPathways = document.getElementById("intro-without-descriptions-with-pathways");
+
+    if (descriptionsChecked && !pathwaysChecked) {
+        /*Show with descriptions only*/
+        introNoDescriptions.classList.add("hide");
+        introWithDescriptionsAndPathways.classList.add("hide");
+        introWithoutDescriptionsWithPathways.classList.add("hide");
+        introWithDescriptions.classList.remove("hide");
+
+    } else if (!descriptionsChecked && !pathwaysChecked) {
+        /*Show no descriptions only*/
+        introNoDescriptions.classList.remove("hide");
+        introWithDescriptions.classList.add("hide");
+        introWithDescriptionsAndPathways.classList.add("hide");
+        introWithoutDescriptionsWithPathways.classList.add("hide");
+    }
+    else if (descriptionsChecked && pathwaysChecked) {
+        /*Show with descriptions and pathways*/
+        introWithDescriptionsAndPathways.classList.remove("hide");
+        introNoDescriptions.classList.add("hide");
+        introWithDescriptions.classList.add("hide");
+        introWithoutDescriptionsWithPathways.classList.add("hide");
+    }
+    else if (!descriptionsChecked && pathwaysChecked) {
+        /*Show without descriptions and with pathways*/
+        introWithDescriptionsAndPathways.classList.add("hide");
+        introNoDescriptions.classList.add("hide");
+        introWithDescriptions.classList.add("hide");
+        introWithoutDescriptionsWithPathways.classList.remove("hide");
     }
 }
 

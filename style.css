@@ -60,6 +60,14 @@
   padding: 0.75em 0;
 }
 
+.prototype-nav-text{
+  color: #D3D6E2;
+  font-size: 14px;
+  padding-left: 6em;
+  position: relative;
+  bottom: 1em;
+}
+
 .title{
   letter-spacing: 0;
   line-height: 36px;
@@ -125,6 +133,10 @@
   background-color: var(--gallery);
 }
 
+.header-cluster-container--pathways-hidden{
+  padding: 0 1em 1em 1em;
+}
+
 .header-cluster-container__white{
   background-color: transparent;
   width: 849px;
@@ -139,7 +151,15 @@
   margin-top: 3em;
 }
 
+.intro-text-filters{
+  margin-bottom: 2em;
+}
+
 .filters-text-link{
+  color: #007bc3;
+}
+
+.map-keys-links{
   color: #007bc3;
 }
 
@@ -228,8 +248,6 @@
           background: #007BFF;
 }
 
-
-
 /** Settings Toggle Switch END
  -------------------------------------*/
 
@@ -239,6 +257,10 @@
   font-weight: 700;
   border-bottom: 3px solid var(--blue-violet2);
   padding-bottom: 10px;
+}
+
+.cluster-name.cluster-name--hidden{
+  padding-bottom: 0;
 }
 
 .occupations-columns{
@@ -285,19 +307,27 @@ div.omaps-occupations__wide{
 }
 
 .technical-occupations-heading{
-  background-color: var(--blue-violet-22);
+  background-color: #EAE6F5;
 }
 
 .higher-technical-occupations-heading{
-  background-color: var(--blue-violet-3);
+  background-color: #D4CDEB;
 }
 
 .professional-occupations-heading{
-  background-color: var(--blue-violet-4);
+  background-color: #BEB4E1;
 }
 
 .professional-occupations .occupations-text-container{
   margin-right: 0;
+}
+
+.omaps-occupations:nth-child(2) > .occupations-text-container > .occupations-heading {
+  background: #D4CDEB;
+}
+
+.professional-occupations .occupations-text-container > .occupations-heading{
+  background-color: #BEB4E1 ;
 }
 
 .occupations-text{

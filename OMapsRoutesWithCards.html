@@ -38,16 +38,42 @@
                     </a>
                 </div>
             </div>
+            <p class="prototype-nav-text">Prototype GC S3-3.0.7 M4</p>
         </div>
     </div>
 
     <div class="omaps-routes-container">
         <div id="filters-text-notification">
-            <p>You are viewing the occupational map(s) with <a class="filters-text-link">descriptions</a> and <a
-                    class="filters-text-link">map keys</a>.
-                There are no active
-                <a class="filters-text-link">filters</a>.
-            </p>
+            <div id="intro-no-descriptions" class="intro-no-descriptions intro-text-filters">
+                <p>You are viewing the occupational map(s) without <a class="filters-text-link">descriptions, without
+                        Pathways and Clusters</a> and
+                    without <a class="map-keys-links">map keys</a>.
+                    There are no active filters.
+                </p>
+            </div>
+
+            <div id="intro-with-descriptions" class="intro-with-descriptions intro-text-filters">
+                <p>You are viewing the occupational map(s) with <a class="filters-text-link">descriptions, without
+                        pathways and clusters</a> and <a class="map-keys-links">map keys</a>.
+                    There are no active filters.
+                </p>
+            </div>
+
+            <div id="intro-with-descriptions-and-pathways"
+                class="intro-with-descriptions-and-pathways intro-text-filters">
+                <p>You are viewing the occupational map(s) with <a class="filters-text-link">descriptions</a>, with <a
+                        class="filters-text-link">pathways and clusters</a> and <a class="map-keys-links">map keys</a>.
+                    There are no active filters.
+                </p>
+            </div>
+
+            <div id="intro-without-descriptions-with-pathways"
+                class="intro-without-descriptions-with-pathways intro-text-filters">
+                <p>You are viewing the occupational map(s) without <a class="filters-text-link">descriptions</a>, with
+                    <a class="filters-text-link">pathways and clusters</a> and <a class="map-keys-links">map keys</a>.
+                    There are no active filters.
+                </p>
+            </div>
         </div>
         <div id="omaps-header-container" class="omaps-header-container">
             <section class="header-cluster-container header-cluster-container__white">
@@ -159,7 +185,7 @@
 
                 <div class="settings-toggle-container">
                     <h2>Pathways and clusters</h2>
-                    <label class="switch"><input type="checkbox" />
+                    <label class="switch"><input name="pathways-toggle" type="checkbox" />
                         <div></div>
                     </label>
                 </div>
