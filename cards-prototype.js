@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     CardListeners();
     HeartIconListeners();
-    FlyoutListeners();
+    SettingsFlyoutListeners();
+    HelpFlyoutListeners();
     window.cardListeners = [];
 });
 
@@ -121,7 +122,7 @@ function HeartIconClickHandler(e) {
     e.currentTarget.querySelector(".heart-icon--path").classList.toggle("heart-icon__clicked");
 }
 
-function FlyoutListeners() {
+function SettingsFlyoutListeners() {
     /*Set pathways to show by default*/
     var pathwaysCheckbox = document.querySelector("input[name=pathways-toggle]");
     pathwaysCheckbox.checked = true;
@@ -132,16 +133,16 @@ function FlyoutListeners() {
 
     for (var i = 0; i < settingsTextLinks.length; i++) {
         settingsTextLinks[i].addEventListener('click', function () {
-            document.getElementById("settings-flyout").classList.toggle("settings-flyout__not-visible");
+            toggleSettingsVisibility();
         }, false);
     }
 
     closeButton.addEventListener('click', function () {
-        document.getElementById("settings-flyout").classList.toggle("settings-flyout__not-visible");
+        toggleSettingsVisibility();
     });
 
     settingsButton.addEventListener('click', function () {
-        document.getElementById("settings-flyout").classList.toggle("settings-flyout__not-visible");
+        toggleSettingsVisibility();
     });
 
     var descrptionsCheckbox = document.querySelector("input[name=descriptions-toggle]");
@@ -157,6 +158,36 @@ function FlyoutListeners() {
 
     pathwaysCheckbox.addEventListener('change', function () {
         togglePathways(pathwaysCheckbox.checked);
+    });
+}
+
+function toggleSettingsVisibility() {
+    document.getElementById("settings-flyout").classList.toggle("settings-flyout__not-visible");
+}
+
+function toggleHelpVisibility() {
+    document.getElementById("help-flyout").classList.toggle("settings-flyout__not-visible");
+}
+
+function HelpFlyoutListeners() {
+    var helpButton = document.getElementById("help-button");
+
+    helpButton.addEventListener('click', function () {
+        toggleHelpVisibility();
+    });
+
+    var mapKeysTextLinks = document.getElementsByClassName("map-keys-links");
+
+    for (var i = 0; i < mapKeysTextLinks.length; i++) {
+        mapKeysTextLinks[i].addEventListener('click', function () {
+            toggleHelpVisibility();
+        }, false);
+    }
+
+    var closeButton = document.getElementById("flyout-help-close-button");
+
+    closeButton.addEventListener('click', function () {
+        toggleHelpVisibility();
     });
 }
 
