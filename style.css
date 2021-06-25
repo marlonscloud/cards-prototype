@@ -64,8 +64,8 @@
   color: #D3D6E2;
   font-size: 14px;
   padding-left: 6em;
-  position: relative;
-  bottom: 1em;
+  position: absolute;
+  bottom: 7px;
 }
 
 .title{
@@ -98,6 +98,10 @@
 .ifa-logo-container{
   display: flex;
   align-items: center;
+}
+
+.omaps-nav-logo-text{
+  font-size: 32px;
 }
 
 .omaps-header-container{
@@ -139,6 +143,10 @@
 
 .header-cluster-container--pathways-hidden{
   padding: 0 1em 1em 1em;
+}
+
+.cluster-name.cluster-name--hidden.cluster-name-top{
+  display: none;
 }
 
 .header-cluster-container__white{
